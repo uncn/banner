@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Banner">
+        <attr name="banner_inch" format="float" />
+        <attr name="banner_interval" format="integer" />
+        <attr name="indicator_show" format="boolean" />
+        <attr name="nested_enabled" format="boolean" />
+        <attr name="indicator_gain" format="color|reference" />
+        <attr name="indicator_miss" format="color|reference" />
+        <attr name="indicator_size" format="dimension|reference" />
+        <attr name="indicator_space" format="dimension|reference" />
+        <attr name="indicator_margin" format="dimension|reference" />
+        <attr name="indicator_gravity" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+
+</resources>
