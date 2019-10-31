@@ -67,6 +67,11 @@ class Banner<T> @JvmOverloads constructor(context: Context, attrs: AttributeSet,
     private var mIndicatorSize: Int = 0
     private var mIndicatorSpace: Int = 0
 
+    companion object {
+        private const val DEFAULT_GAIN_COLOR = -0x1
+        private const val DEFAULT_MISS_COLOR = 0x50ffffff
+    }
+
     private val mBannerTask = object : Runnable {
 
         override fun run() {
@@ -425,11 +430,6 @@ class Banner<T> @JvmOverloads constructor(context: Context, attrs: AttributeSet,
             context.unregisterReceiver(mReceiver)
             mAttached = false
         }
-    }
-
-    companion object {
-        private const val DEFAULT_GAIN_COLOR = -0x1
-        private const val DEFAULT_MISS_COLOR = 0x50ffffff
     }
 
 }
