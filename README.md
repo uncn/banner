@@ -5,7 +5,26 @@
 
 Banner is an open source Android library that allows developers to easily create an ad rotation effect widget like those made in Tmall, Taobao apps.
 
+### Gradle
 
+#### 1. Add the JitPack repository to your build file.
+
+```groovy
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+
+#### 2. Add the dependency.
+
+```groovy
+dependencies {
+    implementation 'com.sunzn:banner:2.2.9'
+}
+```
 
 ### License
 ```
