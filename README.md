@@ -40,6 +40,20 @@ dependencies {
 | indicator_margin  | Indicator_margin                       | The larger the value, the larger the margin        |
 | indicator_gravity | Indicator_gravity                      | Default center, support left, right                |
 
+### How to use
+
+#### 1. Add Banner view to your layout.
+
+```xml
+    <com.sunzn.banner.library.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:indicator_gravity="right"
+        app:indicator_gain="@drawable/svg_indicator_icon_gain"
+        app:indicator_miss="@drawable/svg_indicator_icon_miss" />
+```
+
 ### License
 ```
     Copyright [2017-2020] sunzn
