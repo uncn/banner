@@ -68,6 +68,7 @@ dependencies {
         String getUrl() {
             return url;
         }
+        
     }
 ```
 
