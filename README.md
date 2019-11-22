@@ -11,11 +11,11 @@ Banner is an open source Android library that allows developers to easily create
 
 ```groovy
 allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
-	}
-}
+     repositories {
+         ...
+         maven { url 'https://jitpack.io' }
+     }
+ }
 ```
 
 #### 2. Add the dependency.
