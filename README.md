@@ -26,6 +26,20 @@ dependencies {
 }
 ```
 
+### Attribute
+
+| Attribute         | Describe                               | Additional                                         |
+| ----------------- | -------------------------------------- | -------------------------------------------------- |
+| banner_inch       | Milliseconds per inch                  | The greater the value, the slower the slide        |
+| banner_interval   | Waiting time before next slide         | The greater the value, the longer the wait         |
+| indicator_show    | Whether to display the indicator       | True display, false not displayed                  |
+| indicator_gain    | Indicator drawable when gets the focus | Support color, svg and image reference             |
+| indicator_miss    | Indicator drawable when lost the focus | Support color, svg and image reference             |
+| indicator_size    | Indicator icon size                    | The larger the value, the larger the icon          |
+| indicator_space   | Indicator icon spacing                 | The larger the value, the larger the icon interval |
+| indicator_margin  | Indicator_margin                       | The larger the value, the larger the margin        |
+| indicator_gravity | Indicator_gravity                      | Default center, support left, right                |
+
 ### License
 ```
     Copyright [2017-2020] sunzn
