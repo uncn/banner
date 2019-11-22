@@ -54,6 +54,23 @@ dependencies {
         app:indicator_miss="@drawable/svg_indicator_icon_miss" />
 ```
 
+#### 2. Create a java bean class.
+
+```java
+    private class Bean {
+
+        String url;
+
+        Bean(String url) {
+            this.url = url;
+        }
+
+        String getUrl() {
+            return url;
+        }
+    }
+```
+
 ### License
 ```
     Copyright [2017-2020] sunzn
