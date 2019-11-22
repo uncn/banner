@@ -72,6 +72,26 @@ dependencies {
     }
 ```
 
+#### 3. Set Banner data and set OnItemClickListener, OnItemBindListener.
+
+```groovy
+    Banner<Bean> banner = findViewById(R.id.banner);
+
+    banner.setBannerData(beans);
+    banner.setOnItemClickListener(new Banner.OnItemClickListener<Bean>() {
+        @Override
+        public void onItemClick(int position, Bean item) {
+            // TODO
+        }
+    });
+    banner.setOnItemBindListener(new Banner.OnItemBindListener<Bean>() {
+        @Override
+        public void onItemBind(int position, Bean item, ImageView view) {
+            Glide.with(view).load(item.getUrl()).into(view);
+        }
+    });
+```
+
 ### License
 ```
     Copyright [2017-2020] sunzn
