@@ -5,6 +5,10 @@
 
 Banner is an open source Android library that allows developers to easily create an ad rotation effect widget like those made in Tmall, Taobao apps.
 
+### ScreenShot
+![sample](./screen/001.gif)
+![sample](./screen/002.gif)
+
 ### Gradle
 
 #### 1. Add the JitPack repository to your build file.
