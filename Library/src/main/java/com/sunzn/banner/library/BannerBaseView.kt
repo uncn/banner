@@ -7,7 +7,7 @@ import android.widget.FrameLayout
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 
-abstract class BannerBaseView : FrameLayout, DefaultLifecycleObserver {
+abstract class BannerBaseView : FrameLayout, DefaultLifecycleObserver, BannerActionListener {
 
     private val TAG = "BannerBaseView"
 

@@ -306,8 +306,12 @@ open class Banner<T> @JvmOverloads constructor(context: Context, attrs: Attribut
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         Log.e(TAG, "Banner onAttachedToWindow")
-        setPlaying(true)
+        onAttachedAction()
         regReceiver()
+    }
+
+    override fun onAttachedAction() {
+        setPlaying(true)
     }
 
     override fun onDetachedFromWindow() {
