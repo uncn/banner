@@ -27,7 +27,7 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
-class Banner<T> @JvmOverloads constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int = 0) : BannerBaseView(context, attrs, defStyleAttr) {
+open class Banner<T> @JvmOverloads constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int = 0) : BannerBaseView(context, attrs, defStyleAttr) {
 
     private val TAG = "Banner"
 
