@@ -92,12 +92,22 @@ class Banner<T> @JvmOverloads constructor(context: Context, attrs: AttributeSet,
     private val mReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             val action = intent.action
-            if (Intent.ACTION_USER_PRESENT == action) {
-                setPlaying(true)
-            } else if (Intent.ACTION_SCREEN_OFF == action) {
-                setPlaying(false)
-            } else if (Intent.ACTION_SCREEN_ON == action) {
-                setPlaying(true)
+            when {
+                Intent.ACTION_USER_PRESENT == action -> {
+                    setPlaying(true)
+                }
+                Intent.ACTION_SCREEN_ON == action -> {
+                    setPlaying(true)
+                }
+                Intent.ACTION_SCREEN_OFF == action -> {
+                    setPlaying(false)
+                }
+                BannerAction.ACTION_LOOP == action -> {
+                    setPlaying(true)
+                }
+                BannerAction.ACTION_STOP == action -> {
+                    setPlaying(false)
+                }
             }
         }
     }
@@ -171,6 +181,8 @@ class Banner<T> @JvmOverloads constructor(context: Context, attrs: AttributeSet,
         mFilter.addAction(Intent.ACTION_SCREEN_ON)
         mFilter.addAction(Intent.ACTION_SCREEN_OFF)
         mFilter.addAction(Intent.ACTION_USER_PRESENT)
+        mFilter.addAction(BannerAction.ACTION_LOOP)
+        mFilter.addAction(BannerAction.ACTION_STOP)
 
         PagerSnapHelper().attachToRecyclerView(mRecyclerView)
         mBannerAdapter = BannerAdapter()
@@ -387,7 +399,7 @@ class Banner<T> @JvmOverloads constructor(context: Context, attrs: AttributeSet,
         }
     }
 
-    fun playBanner() {
+    private fun playBanner() {
         if (!isPlaying && mBannerAdapter!!.itemCount > 1) {
             isPlaying = true
             mHandler.removeCallbacks(mBannerTask)
@@ -396,7 +408,7 @@ class Banner<T> @JvmOverloads constructor(context: Context, attrs: AttributeSet,
         }
     }
 
-    fun stopBanner() {
+    private fun stopBanner() {
         isPlaying = false
         mHandler.removeCallbacks(mBannerTask)
         Log.e(TAG, "Stop Banner")
@@ -430,6 +442,10 @@ class Banner<T> @JvmOverloads constructor(context: Context, attrs: AttributeSet,
             context.unregisterReceiver(mReceiver)
             mAttached = false
         }
+    }
+
+    override fun onDestroy(owner: LifecycleOwner) {
+        owner.lifecycle.removeObserver(this)
     }
 
 }
