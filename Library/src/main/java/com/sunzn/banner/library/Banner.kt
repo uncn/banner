@@ -249,6 +249,14 @@ open class Banner<T> @JvmOverloads constructor(context: Context, attrs: Attribut
         mLinearLayout!!.layoutParams = params
     }
 
+    fun getCurrentIndex(): Int {
+        return if (mData.isNullOrEmpty()) -1 else mCurrentIndex % mData.size
+    }
+
+    fun getCurrentItem(): T? {
+        return if (mData.isNullOrEmpty()) null else mData[getCurrentIndex()]
+    }
+
     private fun createIndicators() {
         if (mLinearLayout != null) {
             if (mIsIndicatorShow) {
